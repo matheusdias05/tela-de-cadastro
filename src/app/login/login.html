@@ -1,13 +1,35 @@
-<div class="login-container">
-  <h1>LOGIN</h1>
-  <div class="avatar"></div>
+<div class="login-wrapper">
+  <form [formGroup]="form" (ngSubmit)="login()" class="login-form">
 
-  <form>
-    <input type="email" placeholder="E-mail" name="email" required>
-    <input type="password" placeholder="Senha" name="senha" required>
+    <h1>Login</h1>
 
-    <a href="#">Esqueceu sua senha?</a>
+    <!-- Email -->
+    <label for="email">E-mail</label>
+    <input
+      id="email"
+      type="email"
+      formControlName="email"
+      placeholder="exemplo@dominio.com"
+    />
+    <div class="error" *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+      <span *ngIf="form.get('email')?.errors?.['required']">E-mail obrigatório</span>
+      <span *ngIf="form.get('email')?.errors?.['email']">E-mail inválido</span>
+    </div>
 
-    <button type="submit">ENTRAR</button>
+    <!-- Senha -->
+    <label for="senha">Senha</label>
+    <input
+      id="senha"
+      type="password"
+      formControlName="senha"
+      placeholder="Digite sua senha"
+    />
+    <div class="error" *ngIf="form.get('senha')?.invalid && form.get('senha')?.touched">
+      <span>Senha obrigatória</span>
+    </div>
+
+    <!-- Botão -->
+    <button type="submit">Entrar</button>
+
   </form>
 </div>

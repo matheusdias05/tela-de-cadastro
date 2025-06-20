@@ -1,117 +1,65 @@
-/* Reset básico */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body, html {
-  height: 100%;
-  font-family: 'Poppins', sans-serif;
-  background: #fefefe;
-}
-
-.login-container {
+.login-wrapper {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  padding: 30px 20px;
-  min-height: 100vh;
-  background: linear-gradient(180deg, #ffffff, #f3f3f3);
-  height: 100%;
-  font-family: 'Poppins', sans-serif;
-  background: #fefefe;
-}
-
-/* Título */
-h1 {
-  color: #002B5B;
-  font-size: 2rem;
-  margin-bottom: 20px;
-  font-weight: 700;
-}
-
-/* Avatar */
-.avatar {
-  background-color: #FFD428;
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  margin-bottom: 30px;
-  display: flex;
   align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  background-image: url('https://img.icons8.com/ios-filled/100/002B5B/user-male-circle.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 60px;
+  height: 100vh;
+  background: #fff;
 }
 
-/* Formulário */
-form {
-  width: 100%;
+.login-form {
+  width: 90%;
   max-width: 320px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  animation: slideIn 0.5s ease-in-out;
+  text-align: center;
+}
+
+.login-form h1 {
+  font-size: 28px;
+  color: #002B5B;
+  margin-bottom: 24px;
+}
+
+label {
+  display: block;
+  text-align: left;
+  margin: 12px 0 4px;
+  font-weight: 500;
+  color: #002B5B;
 }
 
 input {
-  padding: 14px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
   border: 1px solid #ccc;
-  border-radius: 12px;
-  font-size: 16px;
-  transition: border 0.3s, box-shadow 0.3s;
-}
-
-input:focus {
-  outline: none;
-  border-color: #FFD428;
-  box-shadow: 0 0 5px rgba(255, 212, 40, 0.7);
-}
-
-a {
-  text-align: right;
   font-size: 14px;
-  color: #002B5B;
-  text-decoration: none;
-  margin-top: -5px;
-  transition: color 0.3s;
+  outline: none;
+  margin-bottom: 8px;
+  box-sizing: border-box;
 }
 
-a:hover {
-  color: #FFD428;
-}
-
-/* Botão estilizado */
 button {
-  background-color: #FFD428;
-  color: #002B5B;
+  width: 100%;
+  background-color: #FFD02C;
   border: none;
-  padding: 14px;
-  font-size: 16px;
-  font-weight: bold;
   border-radius: 12px;
+  padding: 14px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #002B5B;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
-  box-shadow: 0 4px 10px rgba(255, 212, 40, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 12px;
+  transition: 0.3s;
 }
 
 button:hover {
-  background-color: #f2c400;
-  transform: translateY(-2px);
+  background-color: #ffcb1b;
 }
 
-@keyframes slideIn {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0px);
-    opacity: 1;
-  }
+.error {
+  color: red;
+  font-size: 12px;
+  text-align: left;
+  margin-top: -4px;
+  margin-bottom: 8px;
 }
